@@ -1,0 +1,11 @@
+{
+  "provider": "aws-s3",
+  "providerOptions": {
+    "accessKeyId": "AKIAINA4XDXB2P76JQZQ",
+    "secretAccessKey": "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",
+    "region": "ap-south-1",
+    "params": {
+      "Bucket": "karthik-strapi"
+    }
+  }
+}
