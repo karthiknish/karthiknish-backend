@@ -1,18 +1,24 @@
 module.exports = ({ env }) => ({
-  defaultConnection: 'default',
+  defaultConnection: "default",
   connections: {
     default: {
-      connector: 'bookshelf',
+      connector: "bookshelf",
       settings: {
-        client: 'postgres',
-        host: env('DATABASE_HOST', 'database-2.crqqxuix1erp.ap-south-1.rds.amazonaws.com'),
-        port: env.int('DATABASE_PORT', 5432),
-        database: env('DATABASE_NAME', 'karthik'),
-        username: env('DATABASE_USERNAME', 'postgres'),
-        password: env('DATABASE_PASSWORD', 'Cricketman1'),
-        ssl: env.bool('DATABASE_SSL', false),
+        client: "postgres",
+        host: env("DATABASE_HOST", `${process.env.DATABASE_HOST}||''`),
+        port: env.int("DATABASE_PORT", 5432),
+        database: env("DATABASE_NAME", `${process.env.DATABASE_NAME}||''`),
+        username: env(
+          "DATABASE_USERNAME",
+          `${process.env.DATABASE_USERNAME}||''`
+        ),
+        password: env(
+          "DATABASE_PASSWORD",
+          `${process.env.DATABASE_PASSWORD}||''`
+        ),
+        ssl: env.bool("DATABASE_SSL", false),
       },
-      options: {}
+      options: {},
     },
   },
 });
